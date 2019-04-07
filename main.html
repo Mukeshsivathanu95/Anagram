@@ -1,44 +1,39 @@
 <html>
 <head>
-<title> Manipulation and storage</title>
+<title>Anagram</title>
 <meta charset="utf-8">
 </head>
 <body>
-  <form>
 {% if user %}
 <center><h1>ANAGRAM SEARCH ENGINE</h1></center>
-<div style="float:center; width:100%; text-align: center;">
+<div id = "menu" align = "middle" >
+        <a href = "/search">SEARCH</a> |
+        <a href = "/uanagram">DISTINCT ANAGRAM</a> |
+        <a href = "/wordlist">FILE UPLOAD</a> |
+        <a href = "/show">DETAILS</a> |
+        <a href = "{{ url }}">LOGOUT</a>
+     </div>
+
+    <div style="float:center; width:100%; text-align: center;">
  <p class="sub-headline">Current user: <b>"{{ user.email() }}"</b> </p>
 </div>
-<div id = "menu" align = "middle" >
-        <a href = '/show'>DETAILS</a> |
-        <a href = '{{ url }}'>LOGOUT</a>
-     </div>
-     <br>
-     <br>
-     <br>
-     <form method="get" action="/search">
-        <center> Enter word:<input type="text" name="input" pattern="[^a-zA-Z]+" required/><br/></center>
-         <br>
-        <center><input type="submit" name="button" value="search"/></center>
-       </form>
-         {% for y in my_list.strings %}
-         print("{{ y }}")<br/>{% endfor %}
-         <div class="content">
+
+    <div class="content">
 			<table>
 						</table>
 						<form method="get" action="/add">
 							<tr>
 								<td id="button_row">
-                  <center><p> Click below to add words </p></center>
+                  <center><p><b> Click below to add words</b> </p></center>
 									<center><input type="submit" class="button" name="Add word" value="Add word"></center>
 									</td>
 								</tr>
 							</form>
             </div>
 {% else %}
-<h1><b><center><p>Welcome to the application</p></b></h1></center>
+<h1><b><center><p>welcome to the application</p></b></h1></center>
+<b><p>you can {{ url_string }} <a href='{{ url }}'>here</a></p></b>
 {% endif %}
-</form>
+
 </body>
 </html>

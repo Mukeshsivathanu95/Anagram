@@ -1,0 +1,15 @@
+<html>
+<head>
+</head>
+<body>
+  <form method="get" action="/search">
+      word:<input type="text" name="input77" pattern="[a-zA-Z]+" required="True"/><br/>
+      <input type="submit" name="button" value="search"/>
+      </form>
+      {% for y in my_list.strings %}{{ y }}<br/>{% endfor %}
+      {% for i in d %}{% for j in i.strings %}{{ j }}<br/>{% endfor %}{% endfor %}
+      <br/>
+<b><p><a href='/'>Home</a></p></b>
+
+</body>
+</html>
