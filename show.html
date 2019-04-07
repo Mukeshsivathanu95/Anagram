@@ -1,0 +1,35 @@
+<html>
+<head>
+  <style>
+         table, th, td {
+           border: 1px solid black;
+           border-collapse: collapse;
+         }
+      </style>
+</head>
+<body>
+  <form method="get" action='/show' >
+
+      <h1>USER DETAILS</h1>
+      <table>
+         <tr>
+            <th>Lexicographical</th>
+            <th>Lettercount</th>
+            <th>String</th>
+            <th>Wordcount</th>
+            <th>Email</th>
+         </tr>
+         {% for y in query %}
+         <tr>
+          <td> {{ y.lexographical }} </td>
+          <td> {{ y.lettercount }} </td>
+          <td>{% for x in y.strings %} {{ x }} {% endfor %}</td>
+          <td> {{ y.wordcount }}</td>
+          <td> {{ y.email }} {% endfor %}</td>
+          </tr>
+      </table>
+</form>
+
+<b><p><a href='/'>Home</a></p></b>
+</body>
+</html>
